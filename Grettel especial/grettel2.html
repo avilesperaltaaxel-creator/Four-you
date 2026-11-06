@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Para ti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        /* Música */
+        .musica {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        /* Carta cerrada */
+        .carta-cerrada {
+            text-align: center;
+            transition: opacity 1s;
+        }
+
+        .sobre {
+            font-size: 120px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .sobre:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .boton-abrir {
+            background: linear-gradient(135deg, #c9184a, #ff4d6d);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(201, 24, 74, 0.3);
+            transition: all 0.3s;
+        }
+
+        .boton-abrir:hover {
+            transform: scale(1.08);
+        }
+
+        /* Carta abierta */
+        .carta-abierta {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(201, 24, 74, 0.2);
+            display: none;
+            animation: aparecer 1.5s ease-out forwards;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .carta-abierta h1 {
+            color: #c9184a;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .carta-abierta p {
+            color: #444;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .fotos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .fotos img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .fotos img:hover {
+            transform: scale(1.05);
+        }
+
+        .firma {
+            text-align: right;
+            margin-top: 40px;
+            color: #c9184a;
+            font-style: italic;
+        }
+
+        .corazones-flotantes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .corazon-flotante {
+            position: absolute;
+            font-size: 20px;
+            animation: subir 6s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazones flotando de fondo -->
+    <div class="corazones-flotantes" id="corazones"></div>
+
+    <!-- 🎵 Música de fondo -->
+    <div class="musica">
+        <audio controls loop autoplay>
+            <source src="Bruno-Mars-Risk-It-All.mp3" type="audio/mpeg">
+
+        
+    </div>
+
+    <!-- Sobre cerrado -->
+    <div class="carta-cerrada" id="cartaCerrada">
+        <div class="sobre">💌</div>
+        <button class="boton-abrir" onclick="abrirCarta()">¡Ábrela ya! ✨</button>
+    </div>
+
+    <!-- Carta abierta -->
+    <div class="carta-abierta" id="cartaAbierta">
+        <h1>💌 Para ti, mi amor</h1>
+        
+        <p>Hola mi amor ❤️</p>
+        
+        <p>Te cuento, te conocí de una manera extraña, pero con el paso del tiempo me enamoré, y cada dia que hablo contigo me enamoro más y más.</p>
+        
+        <p>En vredad te amo, y ojalá sientas en verdad lo mismo, porque a mí me cuesta mucho expresar mis sentimientos, pero cuando se trata de ti, puedo hacerte cosas como esta las veces que sean necesarias para que veas que mi amor por ti es verdadero.</p>
+        
+        <p>En verdad te amo Grettel, te amo muchisisisisimo, y aunque en verdad no nos hemos visto, por que no quieres todavia, en este corto tiempo que hemos hablado, me has enamorado de una manera que no puedo expresar con simples palabras.</p>
+        
+        <p>Gracias por estar ahí, por ser tú, por hacerme sentir esto, eres lo más bonito que me ha pasado, de verdad te amo, siempre y para siempre. 💖</p>
+        
+        <p>Con todo mi amor,</p>
+        
+        <p class="firma">Tu persona que te ama ❤️</p>
+
+       
+        <div class="fotos">
+            <img  src="grettel imagen 2.jpg" alt="Tú">
+            <img src="minion corazon.jpg" alt="Tú">
+         <img src="grettel imagen 1.jpg" alt="Tú">
+        </div>
+    </div>
+
+    <script>
+        // Generar corazones flotando
+        function crearCorazon() {
+            const corazon = document.createElement('div');
+            corazon.className = 'corazon-flotante';
+            corazon.innerHTML = ['❤️', '💕', '💖', '💗'][Math.floor(Math.random() * 4)];
+            corazon.style.left = Math.random() * 100 + '%';
+            corazon.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.getElementById('corazones').appendChild(corazon);
+        }
+        setInterval(crearCorazon, 800);
+
+        // Abrir la carta
+        function abrirCarta() {
+            document.getElementById('cartaCerrada').style.display = 'none';
+            document.getElementById('cartaAbierta').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

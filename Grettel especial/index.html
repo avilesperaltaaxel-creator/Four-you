@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✨ Algo especial para ti</title>
+<style>
+ * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', cursive, sans-serif;
+}
+body {
+min-height: 100vh;
+background: linear-gradient(135deg, #ffccd5 0%, #ff8fa8 50%, #ff4d6d 100%);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+.corazon {
+font-size: 80px;
+animation: latir 1s ease-in-out infinite;
+margin-bottom: 30px;
+}
+
+@keyframes latir {
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+.caja {
+background: white;
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 40px rgba(255, 77, 126, 0.4);
+text-align: center;
+max-width: 400px;
+}
+
+h1 {
+color: #c9184a;
+margin-bottom: 15px;
+font-size: 24px;
+}
+
+p {
+color: #777;
+margin-bottom: 25px;
+}
+
+input {
+width: 100%;
+padding: 12px;
+font-size: 18px;
+border: 2px solid #ff99ac;
+border-radius: 10px;
+text-align: center;
+margin-bottom: 20px;
+outline: none;
+}
+
+button {
+background: linear-gradient(135deg, #ff4d6d, #c9184a);
+color: white;
+border: none;
+padding: 14px 40px;
+font-size: 18px;
+border-radius: 30px;
+cursor: pointer;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+transform: scale(1.05);
+box-shadow: 0 5px 20px rgba(201, 24, 74, 0.4);
+}
+
+.error {
+color: red;
+margin-top: 15px;
+display: none;
+}
+</style>
+</head>
+<body>
+<div class="corazon">❤️</div>
+    
+<div class="caja">
+<h1>Hay algo para ti 💌</h1>
+<p>Ingresa una fecha especial para abrirlo:<br>(Si en verdas me amas debes de saber)</p>
+<input type="password" id="codigo" placeholder="DD/MM/AAAA">
+<button onclick="verificar()">Entrar ✨</button>
+<p class="error" id="mensajeError">Fecha incorrecta, inténtalo de nuevo ❤️</p>
+</div>
+
+<script>
+function verificar() {
+const codigo = document.getElementById('codigo').value;
+// ✏️ CAMBIA ESTO POR TU FECHA DE CUMPLEAÑOS
+const fechaCorrecta = "160311"; 
+            
+if (codigo === fechaCorrecta) {
+window.location.href = "grettel2.html";
+} else {
+document.getElementById('mensajeError').style.display = "block";
+}
+}
+</script>
+</body>
+</html>
